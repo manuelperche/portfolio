@@ -44,7 +44,7 @@ const AboutCard = () => {
                   inView
                 >
                   <h2 className="text-accent-foreground w-full text-center text-3xl font-semibold tracking-tight sm:w-auto sm:text-left">
-                    Hello There! I'm Manuel
+                    Hello There! I&apos;m Manuel
                   </h2>
                 </MotionEffect>
               </div>
