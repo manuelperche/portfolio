@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { FC } from "react";
 
 interface CarouselControlsProps {
   onNext: () => void;
