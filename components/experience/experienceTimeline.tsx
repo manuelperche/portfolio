@@ -59,10 +59,12 @@ const ExperienceTimeline: FC = () => {
     offset: ["start center", "end center"]
   });
 
-  // Smooth out the scroll progress
+  // First smooth the progress
   const smoothProgress = useSpring(scrollYProgress, {
-    damping: 15,
-    stiffness: 100
+    damping: 25,
+    stiffness: 150,
+    restDelta: 0.001,
+    bounce: 0
   });
 
   return (
@@ -83,36 +85,53 @@ const ExperienceTimeline: FC = () => {
       </MotionEffect>
 
       <div className="relative" ref={containerRef}>
-        {/* Timeline line with gradient */}
-        <div className="hidden md:block absolute left-1/2 h-full w-0.5 -translate-x-1/2">
-          {/* Background gradient line */}
-          <div className="absolute inset-0 bg-gradient-to-b from-teal-400 via-violet-400 to-rose-400 opacity-20" />
+        {/* Timeline line with gradient and blur */}
+        <motion.div 
+          className="hidden md:block absolute left-1/2 h-full w-0.5 -translate-x-1/2"
+          style={{
+            filter: useTransform(smoothProgress, (value) => 
+              value <= 0.1 ? `blur(${(1 - value * 10) * 10}px)` : "blur(0px)"
+            ),
+            opacity: useTransform(smoothProgress, [0, 0.1], [0.3, 1])
+          }}
+        >
+          {/* Background line */}
+          <div className="absolute inset-0 bg-muted/20" />
           
-          {/* Animated gradient progress line */}
+          {/* Animated color fill line */}
           <motion.div 
-            className="absolute inset-0 bg-gradient-to-b from-teal-400 via-violet-400 to-rose-400"
-            style={{ scaleY: smoothProgress, originY: 0 }}
-            initial={{ scaleY: 0 }}
-            transition={{ duration: 0.2 }}
+            className="absolute inset-0 origin-top"
+            style={{ 
+              scaleY: useTransform(smoothProgress, [0, 1], [0, 1], { clamp: true }),
+              background: useTransform(
+                smoothProgress,
+                [0, 0.5, 1],
+                [
+                  "rgb(45, 212, 191)",
+                  "rgb(167, 139, 250)",
+                  "rgb(251, 113, 133)",
+                ]
+              )
+            }}
           />
           
           {/* Animated Circle */}
           <motion.div
             className="absolute left-1/2 -translate-x-1/2 size-4 rounded-full shadow-lg ring-2 ring-white dark:ring-black"
             style={{ 
-              top: useTransform(smoothProgress, [0, 1], ["0%", "100%"]),
+              top: useTransform(smoothProgress, [0, 1], ["0%", "100%"], { clamp: true }),
               background: useTransform(
                 smoothProgress,
                 [0, 0.5, 1],
                 [
-                  "linear-gradient(to right, #2dd4bf, #2dd4bf)", // teal-400
-                  "linear-gradient(to right, #a78bfa, #a78bfa)", // violet-400
-                  "linear-gradient(to right, #fb7185, #fb7185)", // rose-400
+                  "rgb(45, 212, 191)",
+                  "rgb(167, 139, 250)",
+                  "rgb(251, 113, 133)",
                 ]
               )
             }}
           />
-        </div>
+        </motion.div>
 
         {/* Experience Cards */}
         {experiences.map((experience, index) => (

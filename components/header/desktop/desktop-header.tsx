@@ -11,7 +11,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import navigationLinks from "@/config/navigation-links";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
-import { FC, memo, Suspense, useCallback } from "react";
+import { FC, memo, Suspense, useCallback, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
 import SearchButton from "../shared/search";
 import { ThemeSwitcher } from "../shared/theme-switcher";
@@ -19,6 +19,7 @@ import LogoButton from "./logo";
 import NavigationAbout from "./navigations/about/navigation-about";
 import NavigationBlog from "./navigations/blog/navigation-blog";
 import NavigationProjects from "./navigations/projects/navigation-projects";
+import { usePathname, useRouter } from "next/navigation";
 
 interface Props {
   activePath: string;
@@ -26,8 +27,8 @@ interface Props {
 
 // Reusable styles
 const navItemStyles = {
-  base: "text-md font-semibold transition-colors duration-200",
-  active: "bg-accent text-md font-semibold",
+  base: "nav-base",
+  active: "bg-accent"
 };
 
 const NavigationContentFallback = () => (
@@ -43,29 +44,103 @@ const NavigationErrorFallback = () => (
 );
 
 const DesktopHeader: FC<Props> = memo(({ activePath }) => {
-  const isActive = useCallback(
-    (path: string) => {
-      if (path === "/") return activePath === "/";
-      if (path === "/blog") return activePath.startsWith("/blog");
-      return activePath === path;
-    },
-    [activePath],
-  );
+  const router = useRouter();
+  const pathname = usePathname();
+
+  const scrollToSection = (sectionId: string) => {
+    // If we're not on the home page, first navigate to home
+    if (pathname !== '/') {
+      router.push('/');
+      // Wait for navigation to complete before scrolling
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const headerOffset = 100;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+          window.scrollTo({
+            top: sectionId === 'home' ? 0 : offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    } else {
+      // If we're already on the home page, just scroll
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const headerOffset = 100;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+        window.scrollTo({
+          top: sectionId === 'home' ? 0 : offsetPosition,
+          behavior: "smooth"
+        });
+      }
+    }
+  };
+
+  const isActive = useCallback((path: string) => {
+    if (path === "/") {
+      // Only check pathname match for SSR
+      return activePath === "/";
+    }
+    if (path === "/blog") return activePath.startsWith("/blog");
+    return activePath === path;
+  }, [activePath]);
 
   const getNavItemClassName = useCallback(
     (path: string) =>
       cn(
         navigationMenuTriggerStyle(),
-        isActive(path) ? navItemStyles.active : navItemStyles.base,
+        "text-md font-semibold transition-colors duration-200",
+        isActive(path) ? navItemStyles.active : navItemStyles.base
       ),
     [isActive],
   );
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const homeButton = document.querySelector('[data-section="/"]');
+      if (homeButton) {
+        const isAtTop = window.scrollY < 100;
+        if (isAtTop) {
+          homeButton.classList.add(navItemStyles.active);
+          homeButton.classList.remove(navItemStyles.base);
+        } else {
+          homeButton.classList.remove(navItemStyles.active);
+          homeButton.classList.add(navItemStyles.base);
+        }
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const renderNavigationItem = useCallback(
     (link: (typeof navigationLinks)[0]) => {
       const isDropdown =
         link.subNavigationLinks && link.subNavigationLinks.length > 0;
 
+      // Handle sections that need scroll behavior
+      if (['/about', '/projects', '/experience', '/'].includes(link.href)) {
+        const sectionId = link.href === '/' ? 'home' : link.href.slice(1);
+        return (
+          <NavigationMenuItem key={link.href}>
+            <button
+              onClick={() => scrollToSection(sectionId)}
+              data-section={link.href}
+              className={getNavItemClassName(link.href)}
+            >
+              <div className="flex items-center gap-1">{link.label}</div>
+            </button>
+          </NavigationMenuItem>
+        );
+      }
+
+      // Handle dropdown menus and external links as before
       if (isDropdown) {
         return (
           <NavigationMenuItem key={link.href}>

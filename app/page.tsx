@@ -4,7 +4,7 @@ import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
 import Heading from "@/components/heading/main";
 import Profile from "@/components/home/profile";
-import ProjectItem from "@/components/project/main";
+import ProjectSection from "@/components/projects/projectSection";
 import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
 import { ProjectType } from "@/types";
 import { allProjects } from "content-collections";
@@ -18,13 +18,23 @@ export default async function HomePage() {
   return (
     <Fragment>
       <Header />
-      <Heading variant="home">
-        <Profile className="z-10 mt-8 mb-14" />
-      </Heading>
+      <div id="home">
+        <Heading variant="home">
+          <Profile className="z-10 mt-8 mb-14" />
+        </Heading>
+      </div>
 
-      <AboutCard />
+      <div id="about">
+        <AboutCard />
+      </div>
 
-      <ExperienceTimeline />
+      <div id="projects">
+        <ProjectSection />
+      </div>
+
+      <div id="experience">
+        <ExperienceTimeline />
+      </div>
 
       <Footer />
       <ScrollToTopButton />

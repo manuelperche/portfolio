@@ -13,7 +13,7 @@ import Link from "next/link";
 
 const AboutCard = () => {
   return (
-    <div className="border-border bg-background relative min-h-[50vh] max-w-full border-t">
+    <div className="border-border bg-background relative min-h-[50vh] max-w-full border-t mb-20">
       <div className="relative mx-auto -mt-10 max-w-3xl items-center px-4 sm:px-6 lg:px-8">
         <FadeUp delay={0.6} duration={0.3}>
           <Card className="mb-6 overflow-hidden">

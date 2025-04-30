@@ -12,39 +12,11 @@ import { allProjects } from "content-collections";
 import { Metadata } from "next";
 import { Fragment } from "react";
 
-// Validate SEO configuration to ensure all required fields are present
-// This helps catch missing or incomplete SEO setup early
-if (!HEAD || HEAD.length === 0) {
-  console.error("⚠️ HEAD configuration is missing or empty");
-}
-
-// Define the current page for SEO configuration
-const PAGE = "Projects";
-
-// Get SEO configuration for the current page from the HEAD array
-const page = HEAD.find((page: HeadType) => page.page === PAGE) as HeadType;
-
-// Configure comprehensive metadata for SEO and social sharing
-// This includes all necessary meta tags for search engines and social media platforms
-export const metadata: Metadata = {
-  // Basic metadata
-  title: page.title,
-  applicationName: page.title,
-  description: page.description,
-
-  // URL configurations for canonical links and RSS feed
-  metadataBase: new URL(getBaseUrl(page.slug)),
-  alternates: {
-    canonical: getBaseUrl(page.slug),
-  },
-};
-
-export default async function ProjectPage() {
+export default async function ProjectSection() {
   const projects: ProjectType[] = allProjects.sort((a, b) => a.order - b.order);
 
   return (
     <Fragment>
-      <Header />
       <Heading variant="default">
         <MotionEffect
           fade
@@ -56,8 +28,8 @@ export default async function ProjectPage() {
           inView
         >
           <MainTitle
-            title={page.page}
-            description={page.description}
+            title="Projects"
+            description="Check out some of the projects I've worked on."
             className="mx-auto mt-6 mb-14 max-w-3xl px-4 sm:px-6 lg:px-8"
           />
         </MotionEffect>
@@ -69,8 +41,6 @@ export default async function ProjectPage() {
           ))}
         </div>
       </div>
-      <Footer />
-      <ScrollToTopButton />
     </Fragment>
   );
 }
