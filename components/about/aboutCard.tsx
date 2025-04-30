@@ -95,7 +95,7 @@ const AboutCard = () => {
                         className="text-primary mt-1 size-5 flex-none"
                       />
                       <span>
-                        I'm based in{" "}
+                        I&apos;m based in{" "}
                         <strong className="font-semibold">
                           Latin America 🌏
                         </strong>
