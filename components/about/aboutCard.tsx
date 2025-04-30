@@ -1,0 +1,187 @@
+import { FadeUp } from "@/components/ui/animations/fade-up";
+import { MotionEffect } from "@/components/ui/animations/motion-effect";
+import { Button } from "@/components/ui/button";
+import Card from "@/components/ui/card";
+import {
+  ArrowUpRightIcon,
+  CheckIcon,
+  PaperclipIcon as FileIcon,
+  TextIcon as LearnMoreIcon,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+const AboutCard = () => {
+  return (
+    <div className="border-border bg-background relative min-h-[50vh] max-w-full border-t">
+      <div className="relative mx-auto -mt-10 max-w-3xl items-center px-4 sm:px-6 lg:px-8">
+        <FadeUp delay={0.6} duration={0.3}>
+          <Card className="mb-6 overflow-hidden">
+            <div className="shrink-0">
+              <Image
+                title="Cover Image"
+                alt="Cover Image"
+                src="/images/cover.jpg"
+                layout="responsive"
+                width={1200}
+                height={630}
+                quality={100}
+                className="h-128 w-full object-cover"
+                priority
+              />
+            </div>
+
+            <div className="relative mx-auto flex max-w-3xl flex-col px-8 pt-6 pb-8 text-pretty sm:px-14">
+              <div className="flex items-center justify-center sm:justify-start">
+                <MotionEffect
+                  fade
+                  blur="10px"
+                  delay={0.7}
+                  transition={{
+                    duration: 0.5,
+                    ease: "easeInOut",
+                  }}
+                  inView
+                >
+                  <h2 className="text-accent-foreground w-full text-center text-3xl font-semibold tracking-tight sm:w-auto sm:text-left">
+                    Hello There! I'm Manuel
+                  </h2>
+                </MotionEffect>
+              </div>
+              <MotionEffect
+                fade
+                blur="10px"
+                delay={0.7}
+                transition={{
+                  duration: 0.5,
+                  ease: "easeInOut",
+                }}
+                inView
+              >
+                <article id="about-me" className="mt-4">
+                  <p className="text-foreground w-full text-center text-lg sm:w-auto sm:text-left">
+                    A full-stack software engineer with over{" "}
+                    <strong className="font-semibold">
+                      6 years of experience
+                    </strong>{" "}
+                    in the industry, passion for building scalable and efficient
+                    web applications and always looking to learn new things and
+                    improve my skills.
+                  </p>
+                  <p className="mt-2 mb-4 text-center text-xl font-medium sm:text-left">
+                    Some facts about me:
+                  </p>
+
+                  <ul
+                    role="list"
+                    className="text-foreground wrap-everywhere mt-6 max-w-xl space-y-4"
+                  >
+                    <li className="flex gap-x-3">
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-primary mt-1 size-5 flex-none"
+                      />
+                      <span>
+                        I have a{" "}
+                        <strong className="font-semibold">
+                          Computer Engineering degree 👨‍💻
+                        </strong>{" "}
+                        from Universidad Rafael Urdaneta (URU).
+                      </span>
+                    </li>
+                    <li className="flex items-center gap-x-3">
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-primary mt-1 size-5 flex-none"
+                      />
+                      <span>
+                        I'm based in{" "}
+                        <strong className="font-semibold">
+                          Latin America 🌏
+                        </strong>
+                        .
+                      </span>
+                    </li>
+
+                    <li className="flex gap-x-3">
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-primary mt-1 size-5 flex-none"
+                      />
+                      <span>
+                        I love working with{" "}
+                        <strong className="font-semibold">TypeScript</strong>,{" "}
+                        <strong className="font-semibold">React</strong>,{" "}
+                        <strong className="font-semibold">Next.js</strong>,{" "}
+                        <strong className="font-semibold">Node.js</strong>,{" "}
+                        <strong className="font-semibold">Python</strong> and{" "}
+                        <strong className="font-semibold">PostgreSQL</strong>.
+                      </span>
+                    </li>
+                    <li className="flex gap-x-3">
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-primary mt-1 size-5 flex-none"
+                      />
+                      <span>
+                        I speak both{" "}
+                        <strong className="font-semibold">🇪🇸 Spanish</strong>
+                        {" and "}
+                        <strong className="font-semibold">🇬🇧 English</strong>.
+                      </span>
+                    </li>
+                    <li className="flex gap-x-3">
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-primary mt-1 size-5 flex-none"
+                      />
+                      <span>
+                        I learn ⚡ fast, and have a good eye for 🎨 design.
+                      </span>
+                    </li>
+                    <li className="flex gap-x-3">
+                      <CheckIcon
+                        aria-hidden="true"
+                        className="text-primary mt-1 size-5 flex-none"
+                      />
+                      <span>
+                        In my free time, I play bass 🎸 check out my band{" "}
+                        <Link
+                          href="https://www.youtube.com/watch?v=XuRCIl4qkoc&pp=ygUSem9sbGVyIGxhIG1leGljYW5h/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-semibold"
+                        >
+                          Zöller
+                        </Link>
+                        !
+                      </span>
+                    </li>
+                  </ul>
+                </article>
+              </MotionEffect>
+              <div className="mt-8 flex w-full flex-col gap-3 sm:mx-auto sm:flex-row">
+                <Link
+                  href="/files/resume.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button
+                    variant="outline"
+                    className="hover:ring-border cursor-pointer overflow-hidden rounded-lg px-5 py-2 [--liquid-button-color:var(--accent)] [background:_linear-gradient(var(--liquid-button-color)_0_0)_no-repeat_calc(200%-var(--liquid-button-fill,0%))_100%/200%_var(--liquid-button-fill,0.2em)] [transition:_background_0.3s_var(--liquid-button-delay,0s),_color_0.3s_var(--liquid-button-delay,0s),_background-position_0.3s_calc(0.3s_-_var(--liquid-button-delay,0s))] hover:ring-2 hover:[--liquid-button-delay:0.3s] hover:[--liquid-button-fill:100%]"
+                  >
+                    <FileIcon className="size-4" aria-hidden="true" />
+                    Download Resume
+                    <ArrowUpRightIcon className="size-4" aria-hidden="true" />
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </Card>
+        </FadeUp>
+      </div>
+    </div>
+  );
+};
+
+export default AboutCard;
