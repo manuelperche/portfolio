@@ -65,7 +65,7 @@ const AboutCard = () => {
                       6 years of experience
                     </strong>{" "}
                     in the industry, passion for building scalable and efficient
-                    web applications and always looking to learn new things and
+                    web/mobile applications, always looking to learn new things and
                     improve my skills.
                   </p>
                   <p className="mt-2 mb-4 text-center text-xl font-medium sm:text-left">
