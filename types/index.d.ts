@@ -11,8 +11,6 @@ export type HeadType = {
 
 export type AuthorType = {
   name: string;
-  twitterUrl: string;
-  twitterAddress: string;
   email: string;
 };
 

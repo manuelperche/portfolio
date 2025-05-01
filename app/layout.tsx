@@ -67,7 +67,6 @@ export const metadata: Metadata = {
   authors: [
     {
       name: AUTHOR.name,
-      url: AUTHOR.twitterUrl,
     },
   ],
   creator: AUTHOR.name,
@@ -120,25 +119,6 @@ export const metadata: Metadata = {
         type: "image/png",
       },
     ],
-  },
-
-  // Twitter card metadata for Twitter sharing
-  // This enables rich previews when the site is shared on Twitter
-  twitter: {
-    card: "summary_large_image",
-    title: page.title,
-    description: page.description,
-    site: AUTHOR.twitterAddress,
-    images: [
-      {
-        url: OPEN_GRAPH.twitterImage,
-        width: 1200,
-        height: 675,
-        alt: page.title,
-        type: "image/png",
-      },
-    ],
-    creator: AUTHOR.twitterAddress,
   },
 };
 
