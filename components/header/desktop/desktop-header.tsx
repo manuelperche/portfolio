@@ -125,7 +125,7 @@ const DesktopHeader: FC<Props> = memo(({ activePath }) => {
         link.subNavigationLinks && link.subNavigationLinks.length > 0;
 
       // Handle sections that need scroll behavior
-      if (['/about', '/projects', '/experience', '/'].includes(link.href)) {
+      if (['/projects', '/experience', '/', '/contact'].includes(link.href)) {
         const sectionId = link.href === '/' ? 'home' : link.href.slice(1);
         return (
           <NavigationMenuItem key={link.href}>

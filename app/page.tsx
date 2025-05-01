@@ -1,4 +1,5 @@
 import AboutCard from "@/components/about/aboutCard";
+import { ContactForm } from "@/components/contact/contact-form";
 import ExperienceTimeline from "@/components/experience/experienceTimeline";
 import Footer from "@/components/footer/main";
 import Header from "@/components/header/main";
@@ -22,9 +23,7 @@ export default async function HomePage() {
         <Heading variant="home">
           <Profile className="z-10 mt-8 mb-14" />
         </Heading>
-      </div>
 
-      <div id="about">
         <AboutCard />
       </div>
 
@@ -34,6 +33,10 @@ export default async function HomePage() {
 
       <div id="experience">
         <ExperienceTimeline />
+      </div>
+
+      <div id="contact">
+        <ContactForm />
       </div>
 
       <Footer />

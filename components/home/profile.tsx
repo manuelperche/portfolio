@@ -90,23 +90,6 @@ const Profile: FC<ProfileProps> = memo(({ className }) => {
       )}
       aria-label="Profile section"
     >
-      {/* <Avatar
-        className="ring-border bg-background hover:ring-accent/50 mx-auto size-32 rounded-full object-cover shadow-lg ring-4 transition-all duration-300"
-        role="img"
-        aria-label="Tim's profile picture"
-      >
-        <AvatarImage
-          src="/images/profile.jpg"
-          alt="Tim's profile picture"
-          width={128}
-          height={128}
-          className="transition-transform duration-300 group-hover:scale-110"
-        />
-        <AvatarFallback className="bg-accent">
-          <UserIcon className="text-foreground size-16" aria-hidden="true" />
-        </AvatarFallback>
-      </Avatar> */}
-
       <WordReveal text="Manuel Perche" delay={0.15} />
 
       <MotionEffect

@@ -16,7 +16,7 @@ const LogoButton: FC<Props> = ({ className }) => {
     >
       <Avatar>
         <AvatarImage
-          src="/images/logo.png"
+          src="/images/logo.jpg"
           alt="Manuel's avatar"
           width={176}
           height={176}
