@@ -1,8 +1,8 @@
 const AUTHOR = {
-  name: "Tim Baz",
-  twitterUrl: "https://x.com/timtbdev",
-  twitterAddress: "@timtbdev",
-  email: "timtb.dev@gmail.com",
+  name: "Manuel Perche",
+  email: "perchedev@gmail.com",
+  githubUrl: "https://github.com/manuelperche",
+  linkedinUrl: "https://www.linkedin.com/in/manuelperche/",
 };
 
 export default AUTHOR;

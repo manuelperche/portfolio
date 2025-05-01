@@ -9,29 +9,19 @@ import { SocialType } from "../types";
 
 const socialConfig: SocialType[] = [
   {
-    href: "mailto:timtb.dev@gmail.com",
+    href: "mailto:perchedev@gmail.com",
     icon: EmailIcon,
     label: "Email",
   },
   {
-    href: "https://x.com/timtbdev",
-    icon: XPlatformIcon,
-    label: "X (Twitter)",
-  },
-  {
-    href: "https://github.com/timtbdev",
+    href: "https://github.com/manuelperche",
     icon: GitHubIcon,
     label: "GitHub",
   },
   {
-    href: "https://www.linkedin.com/in/timtbdev/",
+    href: "https://www.linkedin.com/in/manuelperche/",
     icon: LinkedInIcon,
     label: "LinkedIn",
-  },
-  {
-    href: "https://www.facebook.com/timtbaz/",
-    icon: FacebookIcon,
-    label: "Facebook",
   },
 ];
 

@@ -3,7 +3,7 @@ import HtmlIcon from "@/icons/html-icon";
 import { cn } from "@/lib/utils";
 import { FC } from "react";
 import { RiNextjsFill as NextJsIcon } from "react-icons/ri";
-
+import { FaReact as ReactIcon } from "react-icons/fa";
 interface Props {
   category: string;
   className?: string;
@@ -16,6 +16,8 @@ const Category: FC<Props> = ({ category, className }) => {
         return <AndroidIcon className="size-5" aria-hidden="true" />;
       case "Next.js":
         return <NextJsIcon className="size-5" aria-hidden="true" />;
+      case "React":
+        return <ReactIcon className="size-5" aria-hidden="true" />;
       case "Web":
       case "HTML, CSS, JS":
         return <HtmlIcon className="size-5" aria-hidden="true" />;

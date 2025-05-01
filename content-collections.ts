@@ -87,6 +87,7 @@ const projects = defineCollection({
       "Android",
       "Next.js",
       "Web",
+      "React",
       "Mobile",
       "HTML, CSS, JS",
       "Other",

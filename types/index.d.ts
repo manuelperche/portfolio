@@ -51,6 +51,7 @@ export type PostType = {
 export type ProjectCategory =
   | "Android"
   | "Next.js"
+  | "React"
   | "Web"
   | "Mobile"
   | "Other";
