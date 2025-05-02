@@ -3,34 +3,6 @@ import { Experience } from "./types";
 const experiences: Experience[] = [
   {
     title: "Senior Full Stack Developer",
-    company: "Ucrop.it",
-    period: "September 2023 — June 2024",
-    description:
-      "Collaborative platform used by farmers to tell the story of their crops.",
-    responsibilities: [
-      "Designing and building a whole new QR code app used by companies and consumers to track the materials and ingredients used in their products.",
-      "Build a scalable GraphQL API used by the QR platform to populate the app telling the crop stories.",
-    ],
-    achievements: [
-      "Developed an intuitive administrative dashboard, facilitating data input for clients and enhancing the efficiency of QR code deployment processes.",
-      "Successfully integrated a robust QR code API and database into the main application, optimizing data management and retrieval for enhanced user experience.",
-      "Spearheaded the release of several dynamic websites, using static data initially and then transitioning to API-driven content consumption, enhancing scalability and flexibility in content management.",
-      "Received positive feedback from clients and stakeholders on the user-friendly interface and functionality of the administrative dashboard, contributing to increased client satisfaction and retention.",
-    ],
-    technologies: [
-      "React",
-      "GraphQL",
-      "Node.js",
-      "QR Code API",
-      "Database Design",
-    ],
-    images: [
-      "/images/experience/Ucropit/ucropit-1.jpg",
-      "/images/experience/Ucropit/ucropit-2.jpg",
-    ],
-  },
-  {
-    title: "Senior Full Stack Developer",
     company: "3Sixty",
     period: "June 2024 — Present",
     description: "Employee relocation online marketplace.",
@@ -46,16 +18,36 @@ const experiences: Experience[] = [
     ],
     technologies: ["Next.js", "React", "TypeScript", "Storybook", "TDD"],
     images: [
-      "/images/experience/3Sixty/sixty-1.jpg",
-      "/images/experience/3Sixty/sixty-2.jpg",
+      "/images/experience/sixty/sixty-1.jpg",
+      "/images/experience/sixty/sixty-2.jpg",
+    ],
+  },
+  {
+    title: "Senior Full Stack Developer",
+    company: "Ucrop.it",
+    period: "September 2023 — June 2024",
+    description: "Collaborative platform used by farmers to tell the story of their crops.",
+    responsibilities: [
+      "Designing and building a whole new QR code app used by companies and consumers to track the materials and ingredients used in their products.",
+      "Build a scalable GraphQL API used by the QR platform to populate the app telling the crop stories.",
+    ],
+    achievements: [
+      "Developed an intuitive administrative dashboard, facilitating data input for clients and enhancing the efficiency of QR code deployment processes.",
+      "Successfully integrated a robust QR code API and database into the main application, optimizing data management and retrieval for enhanced user experience.",
+      "Spearheaded the release of several dynamic websites, using static data initially and then transitioning to API-driven content consumption, enhancing scalability and flexibility in content management.",
+      "Received positive feedback from clients and stakeholders on the user-friendly interface and functionality of the administrative dashboard, contributing to increased client satisfaction and retention.",
+    ],
+    technologies: ["React", "GraphQL", "Node.js", "QR Code API", "Database Design"],
+    images: [
+      "/images/experience/Ucropit/ucropit-1.jpg",
+      "/images/experience/Ucropit/ucropit-2.jpg",
     ],
   },
   {
     title: "Semi-Senior Web/Mobile Developer",
     company: "Epidata",
     period: "June 2021 — August 2023",
-    description:
-      "Assigned to project Galeno, an insurance company based on Argentina.",
+    description: "Assigned to project Galeno, an insurance company based on Argentina.",
     responsibilities: [
       "Building new functionalities for both a web and mobile applications made with ReactJS and React Native, supporting both iOS and Android devices compatibility.",
       "Collaborating with the UI/UX team to update existing parts of the application to a newer design.",
@@ -76,8 +68,7 @@ const experiences: Experience[] = [
     title: "Full Stack Web Developer",
     company: "321 Ignition (Overfuel)",
     period: "June 2019 — June 2021",
-    description:
-      "Production grade application for car dealership websites. Made with the Static Site Generator CogearJS, built mainly with VueJS Components which later started migrating to a ReactJS and NextJS app.",
+    description: "Production grade application for car dealership websites. Made with the Static Site Generator CogearJS, built mainly with VueJS Components which later started migrating to a ReactJS and NextJS app.",
     responsibilities: [
       "Building an easily customizable and extensive template for multiple mobile-first websites.",
       "Developing new dealership websites from design to production with high attention to detail.",
@@ -89,13 +80,7 @@ const experiences: Experience[] = [
       "Built and released more than 30 websites to production using the customizable template and Static Site Generator.",
       "Started migrating the existing platform to a newer, more scalable and maintainable infrastructure made with newer technologies, leading to an increased performance and a faster workflow.",
     ],
-    technologies: [
-      "Vue.js",
-      "React",
-      "Next.js",
-      "CogearJS",
-      "Static Site Generation",
-    ],
+    technologies: ["Vue.js", "React", "Next.js", "CogearJS", "Static Site Generation"],
     images: [
       "/images/experience/321Ignition/321ignition-1.jpg",
       "/images/experience/321Ignition/321ignition-2.jpg",
