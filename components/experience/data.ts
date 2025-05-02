@@ -18,8 +18,8 @@ const experiences: Experience[] = [
     ],
     technologies: ["Next.js", "React", "TypeScript", "Storybook", "TDD"],
     images: [
-      "/images/experience/3Sixty/3sixty-1.jpg",
-      "/images/experience/3Sixty/3sixty-2.jpg",
+      "/images/experience/3Sixty/sixty-1.jpg",
+      "/images/experience/3Sixty/sixty-2.jpg",
     ],
   },
   {
