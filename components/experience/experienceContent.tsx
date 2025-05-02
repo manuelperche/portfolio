@@ -19,7 +19,7 @@ export const ExperienceContent: FC<ExperienceContentProps> = ({ experience }) =>
       <p className="text-foreground mt-2 italic">{experience.description}</p>
     </div>
 
-    <ExperienceSection title="Key Responsibilities:" items={experience.responsibilities} />
+    {/* <ExperienceSection title="Key Responsibilities:" items={experience.responsibilities} /> */}
     <ExperienceSection title="Achievements:" items={experience.achievements} />
     
     {experience.technologies && (

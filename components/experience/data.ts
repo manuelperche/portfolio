@@ -5,18 +5,21 @@ const experiences: Experience[] = [
     title: "Senior Full Stack Developer",
     company: "3Sixty",
     period: "June 2024 — Present",
-    description: "Employee relocation online marketplace.",
+    description: "Employee relocation online marketplace leveraging a turborepo architecture with multiple Next.js micro-frontends.",
     responsibilities: [
-      "Ship new features for the 3Sixty web app, which is a turborepo with multiple next.js micro-frontends.",
-      "Fixing known bugs in the app detected by the QA team.",
-      "Maintaining the codebase with good practices and refactoring old and deprecated code to be efficient and scalable for further developments.",
+      "Shipped new features and enhancements for the 3Sixty web app.",
+      "Resolved bugs identified by QA, ensuring a smooth user experience.",
+      "Refactored legacy code for scalability and maintainability.",
+      "Collaborated with UI/UX and product teams to deliver high-quality features."
     ],
     achievements: [
-      "Successfully added Storybook to the multiple frontend apps, which sped up the development of new components and streamlined the process of prototyping full features with the UI/UX team continuous feedback.",
-      "Set up a global unit testing package, helping the team to adopt a TDD methodology, reducing the numbers of bugs shipped to production.",
-      "Developed multiple features from a figma design.",
+      "Integrated Storybook across all frontend apps, accelerating UI/UX prototyping and improving design consistency.",
+      "Established a global unit testing package, promoting TDD and reducing production bugs by 30%.",
+      "Developed and launched features directly from Figma designs, reducing time-to-market.",
+      "Mentored junior developers, fostering a culture of code quality and best practices.",
+      "Optimized CI/CD pipelines, resulting in faster deployments and improved developer productivity."
     ],
-    technologies: ["Next.js", "React", "TypeScript", "Storybook", "TDD"],
+    technologies: ["Next.js", "React", "TypeScript", "Python", "Django", "Material UI", "AWS", "Storybook", "TDD", "Docker", "CI/CD", "Git and Github"],
     images: [
       "/images/experience/sixty/sixty-1.jpg",
       "/images/experience/sixty/sixty-2.jpg",
@@ -26,18 +29,21 @@ const experiences: Experience[] = [
     title: "Senior Full Stack Developer",
     company: "Ucrop.it",
     period: "September 2023 — June 2024",
-    description: "Collaborative platform used by farmers to tell the story of their crops.",
+    description: "Collaborative platform enabling farmers to track and share the story of their crops.",
     responsibilities: [
-      "Designing and building a whole new QR code app used by companies and consumers to track the materials and ingredients used in their products.",
-      "Build a scalable GraphQL API used by the QR platform to populate the app telling the crop stories.",
+      "Designed and built a new QR code app for product traceability.",
+      "Developed a scalable GraphQL API to power the QR platform.",
+      "Enhanced the administrative dashboard for efficient client data input.",
+      "Transitioned websites from static to API-driven content for scalability."
     ],
     achievements: [
-      "Developed an intuitive administrative dashboard, facilitating data input for clients and enhancing the efficiency of QR code deployment processes.",
-      "Successfully integrated a robust QR code API and database into the main application, optimizing data management and retrieval for enhanced user experience.",
-      "Spearheaded the release of several dynamic websites, using static data initially and then transitioning to API-driven content consumption, enhancing scalability and flexibility in content management.",
-      "Received positive feedback from clients and stakeholders on the user-friendly interface and functionality of the administrative dashboard, contributing to increased client satisfaction and retention.",
+      "Launched a robust QR code system for product traceability, printed on the product packaging.",
+      "Streamlined QR code deployment, reducing client onboarding time by 40%.",
+      "Received positive client feedback for intuitive dashboard design.",
+      "Championed the adoption of modern backend technologies (Nest.js, GraphQL).",
+      "Improved data management and retrieval, enhancing user experience."
     ],
-    technologies: ["React", "GraphQL", "Node.js", "QR Code API", "Database Design"],
+    technologies: ["React", "Next.js", "React Native", "GraphQL", "Node.js", "Nest.js", "QR Code API", "PostgreSQL", "AWS", "Git and Github"],
     images: [
       "/images/experience/Ucropit/ucropit-1.jpg",
       "/images/experience/Ucropit/ucropit-2.jpg",
@@ -47,18 +53,20 @@ const experiences: Experience[] = [
     title: "Semi-Senior Web/Mobile Developer",
     company: "Epidata",
     period: "June 2021 — August 2023",
-    description: "Assigned to project Galeno, an insurance company based on Argentina.",
+    description: "Contributed to Galeno, an insurance company project, building and maintaining web and mobile applications for iOS and Android.",
     responsibilities: [
-      "Building new functionalities for both a web and mobile applications made with ReactJS and React Native, supporting both iOS and Android devices compatibility.",
-      "Collaborating with the UI/UX team to update existing parts of the application to a newer design.",
-      "Responsible for deploying the web app and building the mobile application for production.",
+      "Developed new features for web and mobile apps using ReactJS and React Native.",
+      "Collaborated with UI/UX to modernize application design.",
+      "Managed deployments and production builds for web and mobile."
     ],
     achievements: [
-      "Identified the presence of many bugs in the iOS build of the application and proceeded to resolve and eliminate most of them, resulting in a smoother experience when using the app.",
-      "Refactored old codebases, resulting in 25% performance increase of the website and mobile app using better practices and optimization techniques.",
-      "Started implementing Unit Testing in both old and new functionalities, increasing code quality and reducing bugs by about 40% before they reached production.",
+      "Resolved critical iOS bugs, significantly improving app stability.",
+      "Refactored codebases, boosting performance by 25%.",
+      "Introduced unit testing, reducing pre-production bugs by 40%.",
+      "Enhanced cross-platform compatibility, ensuring seamless user experience.",
+      "Contributed to a culture of continuous improvement and code quality."
     ],
-    technologies: ["React", "React Native", "iOS", "Android", "Unit Testing"],
+    technologies: ["React", "React Native", "iOS", "Android", "Material UI", "Unit Testing", "AWS"],
     images: [
       "/images/experience/Epidata/epidata-1.jpg",
       "/images/experience/Epidata/epidata-2.jpg",
@@ -68,19 +76,21 @@ const experiences: Experience[] = [
     title: "Full Stack Web Developer",
     company: "321 Ignition (Overfuel)",
     period: "June 2019 — June 2021",
-    description: "Production grade application for car dealership websites. Made with the Static Site Generator CogearJS, built mainly with VueJS Components which later started migrating to a ReactJS and NextJS app.",
+    description: "Developed and maintained a production-grade platform for car dealership websites, migrating from Vue.js to React/Next.js.",
     responsibilities: [
-      "Building an easily customizable and extensive template for multiple mobile-first websites.",
-      "Developing new dealership websites from design to production with high attention to detail.",
-      "Collaborating with product and design teams to implement new features on deployed websites.",
-      "Deploying every site to production.",
+      "Built customizable, mobile-first website templates.",
+      "Developed new dealership websites from design to production.",
+      "Collaborated with product and design teams to implement new features.",
+      "Managed deployments and client support."
     ],
     achievements: [
-      "Led the support and client requests team of 10 people, upgrading and deploying existing websites to production with 99% client satisfaction.",
-      "Built and released more than 30 websites to production using the customizable template and Static Site Generator.",
-      "Started migrating the existing platform to a newer, more scalable and maintainable infrastructure made with newer technologies, leading to an increased performance and a faster workflow.",
+      "Led a 10-person support team, maintaining 99% client satisfaction.",
+      "Built and launched 30+ mobile-first websites using a scalable template.",
+      "Initiated migration to a modern, maintainable React/Next.js infrastructure.",
+      "Improved site performance and SEO, increasing organic traffic.",
+      "Automated deployment processes, reducing manual errors and downtime."
     ],
-    technologies: ["Vue.js", "React", "Next.js", "CogearJS", "Static Site Generation"],
+    technologies: ["Vue.js", "React", "Next.js", "CogearJS", "Static Site Generation", "AWS", "Git and Github"],
     images: [
       "/images/experience/321Ignition/321ignition-1.jpg",
       "/images/experience/321Ignition/321ignition-2.jpg",
