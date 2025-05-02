@@ -1,7 +1,5 @@
-![Portfolio-App-Product-Hunt](https://github.com/user-attachments/assets/e344041d-564d-4439-af63-c926a97b14d8)
-![Banner-02](https://github.com/user-attachments/assets/ebb36170-fdf3-4b47-bbc2-cdaa8f282b5a)
-![Banner-03](https://github.com/user-attachments/assets/a1c6a2e5-2c6c-4b86-8ef7-8f8e3d84b2df)
-![Banner-04](https://github.com/user-attachments/assets/3b5f415a-3351-49cb-97e7-094b19b774d5)
+![image](https://github.com/user-attachments/assets/f72a9777-6c59-41b8-ae75-912fd254c4c5)
+
 
 A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio website built with modern web technologies.
 
@@ -9,12 +7,9 @@ A **blazing-fast**, **SEO-optimized**, and **fully responsive** portfolio websit
 
 - 🚀 Built with **Next.js 15** and **TypeScript 5**
 - 💨 Styled using **Tailwind CSS v4** and **ShadCN UI**
-- 🔐 Authentication and database with **Supabase**
-- 📊 State management with **Zustand** and **TanStack Query v5**
 - 📧 Email functionality via **Resend**
-- 🗃️ Type-safe ORM with **Drizzle**
 
-🌎 **Live Demo:** [timtb.dev](https://timtb.dev)
+🌎 **Live Demo:** [manuelperche.work](https://manuelperche.work)
 
 ## 🚀 Getting Started
 
@@ -70,21 +65,7 @@ Create a `.env.local` file with the following variables:
 ```env
 NEXT_PUBLIC_APP_URL=http://localhost:3000
 NEXT_PUBLIC_WEB_URL=your_production_domain_name
-GITHUB_TOKEN=your_github_token
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_key
 RESEND_API_KEY=your_resend_api_key
 ```
-
-## 📝 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📞 Contact
-
-For questions or feedback, reach out through:
-
-- Email: timtb.dev@gmail.com
-- X: [@timtbdev](https://x.com/timtbdev)
 
 ---
