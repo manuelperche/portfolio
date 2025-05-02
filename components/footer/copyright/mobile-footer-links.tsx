@@ -19,17 +19,6 @@ const MobileFooterLinks = () => {
           <span className={cn(defaultStyle)}>Sitemap</span>
         </Link>
       </Button>
-      <span className="text-muted-foreground">|</span>
-      <Button variant="link" asChild className="group flex items-center gap-2">
-        <Link href="/rss.xml" aria-label="RSS Feed" prefetch={true}>
-          <FaSquareRss
-            size={18}
-            className={cn(defaultStyle)}
-            aria-hidden="true"
-          />
-          <span className={cn(defaultStyle)}>RSS Feed</span>
-        </Link>
-      </Button>
     </div>
   );
 };

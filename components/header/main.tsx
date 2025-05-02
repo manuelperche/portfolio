@@ -1,16 +1,11 @@
 "use client";
 
-import ProgressBar from "@/components/header/progress-bar";
 import { usePathname } from "next/navigation";
 import { FC } from "react";
 import DesktopHeader from "./desktop/desktop-header";
 import MobileHeader from "./mobile/mobile-header";
 
-interface Props {
-  showProgressBar?: boolean;
-}
-
-const Header: FC<Props> = ({ showProgressBar = false }) => {
+const Header: FC = () => {
   const path = usePathname();
 
   return (
@@ -19,7 +14,6 @@ const Header: FC<Props> = ({ showProgressBar = false }) => {
         <DesktopHeader activePath={path} />
         <MobileHeader currentPath={path} />
       </div>
-      {showProgressBar && <ProgressBar />}
     </div>
   );
 };

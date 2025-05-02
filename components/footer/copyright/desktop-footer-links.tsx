@@ -47,19 +47,7 @@ const DesktopFooterLinks = () => {
           />
         </div>
         <CopyrightText />
-        <div className="flex flex-1 justify-end">
-          <FooterLink
-            href="/rss.xml"
-            icon={
-              <FaSquareRss
-                aria-hidden="true"
-                className={cn(defaultStyle, "size-[18px]")}
-              />
-            }
-            label="RSS Feed"
-            ariaLabel="Subscribe to RSS feed"
-          />
-        </div>
+        <div className="flex flex-1 justify-end"></div>
       </div>
     </Fragment>
   );

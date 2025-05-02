@@ -1,16 +1,16 @@
-import Footer from "@/components/footer/main";
-import Header from "@/components/header/main";
 import Heading from "@/components/heading/main";
-import ProjectItem from "@/components/project/main";
+import ProjectItemSkeleton from "@/components/project/main-skeleton";
 import { MotionEffect } from "@/components/ui/animations/motion-effect";
 import MainTitle from "@/components/ui/main-title";
-import ScrollToTopButton from "@/components/ui/scroll-to-top-button";
-import { HEAD } from "@/config/seo";
-import { getBaseUrl } from "@/lib/utils";
-import { HeadType, ProjectType } from "@/types";
+import { ProjectType } from "@/types";
 import { allProjects } from "content-collections";
-import { Metadata } from "next";
-import { Fragment } from "react";
+import dynamic from "next/dynamic";
+import { Fragment, Suspense } from "react";
+
+const ProjectItem = dynamic(() => import("@/components/project/main"), {
+  loading: () => <ProjectItemSkeleton />,
+  ssr: true,
+});
 
 export default async function ProjectSection() {
   const projects: ProjectType[] = allProjects.sort((a, b) => a.order - b.order);
@@ -20,9 +20,9 @@ export default async function ProjectSection() {
       <Heading variant="default">
         <MotionEffect
           fade
-          blur="10px"
+          blur="5px"
           transition={{
-            duration: 0.5,
+            duration: 0.3,
             ease: "easeInOut",
           }}
           inView
@@ -37,7 +37,9 @@ export default async function ProjectSection() {
       <div className="border-border bg-background relative min-h-[50vh] max-w-full border-t">
         <div className="relative mx-auto -mt-12 max-w-3xl px-4 sm:px-6 lg:px-8">
           {projects.map((project, index) => (
-            <ProjectItem key={index} project={project} className="mb-8" />
+            <Suspense key={index} fallback={<ProjectItemSkeleton />}>
+              <ProjectItem project={project} className="mb-8" index={index} />
+            </Suspense>
           ))}
         </div>
       </div>
