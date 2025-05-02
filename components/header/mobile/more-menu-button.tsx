@@ -65,22 +65,9 @@ const MoreMenuButton = () => {
         <div className="mx-auto w-full max-w-sm">
           <DrawerHeader>
             <DrawerTitle>Settings</DrawerTitle>
-            <DrawerDescription>Search and theme settings</DrawerDescription>
+            <DrawerDescription>Theme settings</DrawerDescription>
           </DrawerHeader>
           <div className="flex flex-col gap-6 p-4">
-            <div className="flex items-center justify-center space-x-2">
-              <DrawerClose asChild>
-                <Button
-                  variant="outline"
-                  aria-label="Search"
-                  className="group text-foreground hover:text-accent-foreground w-full gap-2"
-                  onClick={handleSearchClick}
-                >
-                  <SearchIcon className="size-4" />
-                  Search
-                </Button>
-              </DrawerClose>
-            </div>
             <div className="space-y-2">
               <h3 className="text-sm font-medium">Theme</h3>
               <ThemeSwitcher variant="toggle" />

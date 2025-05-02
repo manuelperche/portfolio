@@ -13,7 +13,6 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { FC, memo, Suspense, useCallback, useEffect } from "react";
 import { ErrorBoundary } from "react-error-boundary";
-import SearchButton from "../shared/search";
 import { ThemeSwitcher } from "../shared/theme-switcher";
 import LogoButton from "./logo";
 import NavigationAbout from "./navigations/about/navigation-about";
