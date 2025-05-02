@@ -212,3 +212,5 @@ export function ContactForm() {
     </>
   );
 }
+
+export default ContactForm;

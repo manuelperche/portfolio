@@ -86,12 +86,10 @@ const Profile: FC<ProfileProps> = memo(({ className }) => {
     <section
       className={cn(
         "mx-auto mb-4 max-w-2xl items-center justify-center text-center",
-        className,
+        className
       )}
       aria-label="Profile section"
     >
-      <WordReveal text="Manuel Perche" delay={0.15} />
-
       <MotionEffect
         fade
         blur="10px"
@@ -102,51 +100,30 @@ const Profile: FC<ProfileProps> = memo(({ className }) => {
         }}
         inView
       >
-        <div className="space-y-2">
+        <WordReveal text="Manuel Perche" delay={0.15} />
+        <div className="space-y-2 mt-4">
           <p className="text-foreground text-xl font-semibold">
             Full-Stack Software Engineer
           </p>
         </div>
       </MotionEffect>
-      <MotionEffect
-        fade
-        blur="10px"
-        transition={{
-          duration: 0.5,
-          ease: "easeInOut",
-          delay: 0.25,
-        }}
-        inView
-      >
-        <div className="relative mt-6 w-full overflow-hidden">
-          <InfiniteSlider
-            speed={40}
-            className="flex h-full w-full items-center mask-x-from-80% mask-x-to-90% sm:mask-x-from-70% sm:mask-x-to-90%"
-          >
-            {techStack.map((tech, index) => (
-              <div
-                key={tech.name}
-                className="inline-flex items-center gap-2 transition-all duration-300"
-              >
-                <tech.icon className={cn("text-muted-foreground size-6")} />
-                <span className="text-foreground/80 text-xl font-semibold">
-                  {tech.name}
-                </span>
-              </div>
-            ))}
-          </InfiniteSlider>
-          <ProgressiveBlur
-            className="pointer-events-none absolute top-0 left-0 h-full w-[50px] sm:w-[100px]"
-            direction="left"
-            blurIntensity={1}
-          />
-          <ProgressiveBlur
-            className="pointer-events-none absolute top-0 right-0 h-full w-[50px] sm:w-[100px]"
-            direction="right"
-            blurIntensity={1}
-          />
-        </div>
-      </MotionEffect>
+
+      <div className="relative mt-6 w-full">
+        <div className="absolute inset-0 bg-gradient-to-r from-background via-transparent to-background z-10 pointer-events-none" />
+        <InfiniteSlider speed={40} className="flex h-full w-full items-center">
+          {techStack.map((tech) => (
+            <div
+              key={tech.name}
+              className="inline-flex items-center gap-2 px-4"
+            >
+              <tech.icon className="text-muted-foreground size-6" />
+              <span className="text-foreground/80 text-xl font-semibold">
+                {tech.name}
+              </span>
+            </div>
+          ))}
+        </InfiniteSlider>
+      </div>
     </section>
   );
 });

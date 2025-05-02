@@ -25,58 +25,29 @@ export function InfiniteSlider({
   className,
 }: InfiniteSliderProps) {
   const [currentSpeed, setCurrentSpeed] = useState(speed);
+  const [isTransitioning, setIsTransitioning] = useState(false);
   const [ref, { width, height }] = useMeasure();
   const translation = useMotionValue(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [key, setKey] = useState(0);
 
   useEffect(() => {
-    let controls;
+    if (!width || !height) return;
+
     const size = direction === "horizontal" ? width : height;
     const contentSize = size + gap;
     const from = reverse ? -contentSize / 2 : 0;
     const to = reverse ? 0 : -contentSize / 2;
+    const duration = Math.abs(to - from) / currentSpeed;
 
-    const distanceToTravel = Math.abs(to - from);
-    const duration = distanceToTravel / currentSpeed;
+    const controls = animate(translation, [from, to], {
+      ease: "linear",
+      duration,
+      repeat: Infinity,
+      repeatType: "loop",
+      repeatDelay: 0,
+    });
 
-    if (isTransitioning) {
-      const remainingDistance = Math.abs(translation.get() - to);
-      const transitionDuration = remainingDistance / currentSpeed;
-
-      controls = animate(translation, [translation.get(), to], {
-        ease: "linear",
-        duration: transitionDuration,
-        onComplete: () => {
-          setIsTransitioning(false);
-          setKey((prevKey) => prevKey + 1);
-        },
-      });
-    } else {
-      controls = animate(translation, [from, to], {
-        ease: "linear",
-        duration: duration,
-        repeat: Infinity,
-        repeatType: "loop",
-        repeatDelay: 0,
-        onRepeat: () => {
-          translation.set(from);
-        },
-      });
-    }
-
-    return controls?.stop;
-  }, [
-    key,
-    translation,
-    currentSpeed,
-    width,
-    height,
-    gap,
-    isTransitioning,
-    direction,
-    reverse,
-  ]);
+    return controls.stop;
+  }, [width, height, gap, direction, reverse, currentSpeed, translation]);
 
   const hoverProps = speedOnHover
     ? {
@@ -92,9 +63,12 @@ export function InfiniteSlider({
     : {};
 
   return (
-    <div className={cn("overflow-hidden", className)}>
+    <div className={cn(
+      "relative overflow-hidden bg-transparent",
+      className
+    )}>
       <motion.div
-        className="flex w-max"
+        className="flex w-max items-center will-change-transform [transform:translate3d(0,0,0)] [-webkit-transform:translate3d(0,0,0)]"
         style={{
           ...(direction === "horizontal"
             ? { x: translation }
