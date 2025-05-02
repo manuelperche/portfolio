@@ -60,7 +60,7 @@ export function ContactForm() {
       setIsSubmitting(true);
 
       // Send form data to API endpoint
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
