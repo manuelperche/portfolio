@@ -63,7 +63,7 @@ export const ExperienceCarousel: FC<ExperienceCarouselProps> = ({
               src={images[imageIndex]}
               alt={`${company} screenshot ${imageIndex + 1}`}
               fill
-              className="object-cover"
+              className="object-contain"
               priority
             />
           </motion.div>

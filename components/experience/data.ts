@@ -2,9 +2,27 @@ import { Experience } from "./types";
 
 const experiences: Experience[] = [
   {
+    title: "Senior Full Stack Engineer - AI Integrations",
+    company: "Vettx",
+    period: "June 2025 — Present",
+    description: "Automotive lead management platform and private party vehicle acquisition system based in the USA.",
+    responsibilities: [],
+    achievements: [
+      "Led the integration of AI/ML capabilities into the platform, including a vehicle listing classification model with image recognition, an AI dealer orchestrator that automates acquisition workflows, and an AI-powered search bar with a built-in assistant, enabling dealerships to evaluate inventory opportunities faster and with higher confidence.",
+      "Architected real-time cross-platform communication infrastructure using Socket.IO with Azure Web PubSub, bridging the Vettx platform with external marketplaces like Facebook Marketplace. Implemented the WebSocket layer, enabling live outbound message delivery to third-party platforms, bidirectional conversation sync, and instant notifications at scale.",
+      "Researched, designed, and initiated a shared UI component library strategy for the frontend ecosystem, defining extraction governance, cross-project distribution via GitHub Packages, TailwindCSS peer dependency architecture, and Vite Library Mode as the build tooling, establishing the foundation for incremental component reuse across the web and desktop applications with centralized Storybook documentation."
+    ],
+    technologies: ["React", "TypeScript", "Electron", "Tailwind CSS", "NestJS", "MySQL", "Socket.IO", "Python", "AI/ML Model Integration", "Storybook", "GitHub Packages", "Jest", "Node.js", "Redis", "Docker"],
+    images: [
+      "/images/experience/vettx/vettx-1.png",
+      "/images/experience/vettx/vettx-2.png",
+      "/images/experience/vettx/vettx-3.png",
+    ],
+  },
+  {
     title: "Senior Full Stack Developer",
     company: "3Sixty",
-    period: "June 2024 — Present",
+    period: "June 2024 — June 2025",
     description: "Employee relocation online marketplace leveraging a turborepo architecture with multiple Next.js micro-frontends.",
     responsibilities: [
       "Shipped new features and enhancements for the 3Sixty web app.",

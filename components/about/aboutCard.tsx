@@ -62,7 +62,7 @@ const AboutCard = () => {
                   <p className="text-foreground w-full text-center text-lg sm:w-auto sm:text-left">
                     A full-stack software engineer with over{" "}
                     <strong className="font-semibold">
-                      6 years of experience
+                      7 years of experience
                     </strong>{" "}
                     in the industry, passion for building scalable and efficient
                     web/mobile applications, always looking to learn new things and
@@ -145,16 +145,7 @@ const AboutCard = () => {
                         className="text-primary mt-1 size-5 flex-none"
                       />
                       <span>
-                        In my free time, I play bass 🎸 check out my band{" "}
-                        <Link
-                          href="https://www.youtube.com/watch?v=XuRCIl4qkoc&pp=ygUSem9sbGVyIGxhIG1leGljYW5h/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="font-semibold"
-                        >
-                          Zöller
-                        </Link>
-                        !
+                        In my free time, I play bass 🎸
                       </span>
                     </li>
                   </ul>
